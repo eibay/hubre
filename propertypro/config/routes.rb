@@ -6,15 +6,18 @@ Rails.application.routes.draw do
  get '/' => 'users#index' #index page
  get '/home' => 'users#home' #rerouting to home once logged in
 
- post '/' => 'users#login' #login action
- post '/' => 'users#create' #create a new user
+ # post '/' => 'users#login' #login action
+ # post '/' => 'users#create' #create a new user
 
 # Properties
 
- # post '/property/new' => 'property#create'
- # get '/property/:id' => 'property#show'
- # put  'property/edit' => 'property#edit'
+get '/property' => 'properties#index'
 
-  resources :users #need to create the data bases
+ # post '/property/new' => 'properties#create'
+ # get '/property/:id' => 'properties#show'
+ # put  'property/edit' => 'properties#edit'
+
+  resources :users 
+  resources :properties
 
 end
