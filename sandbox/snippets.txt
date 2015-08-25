@@ -7,3 +7,13 @@ var marker = new google.maps.Marker({
   map: map
 });
 
+
+List of available services: types
+https://developers.google.com/places/supported_types
+
+
+RESOURCES:
+
+GMaps.js
+https://hpneo.github.io/gmaps/examples.html
+

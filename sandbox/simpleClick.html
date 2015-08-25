@@ -21,6 +21,7 @@
     <script>
 function initMap() {
   var myLatlng = {lat: -20.363, lng: 131.044};
+  var myLatlng2 = {lat: -22.363, lng: 135.044};
 
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
@@ -30,7 +31,7 @@ function initMap() {
   var marker = new google.maps.Marker({
     position: myLatlng,
     map: map,
-    title: 'Click to zoom'
+    title: 'Click to zoom1'
   });
 
   map.addListener('center_changed', function() {
@@ -45,6 +46,14 @@ function initMap() {
     map.setZoom(8);
     map.setCenter(marker.getPosition());
   });
+
+  var marker2 = new google.maps.Marker({
+  position: myLatlng2,
+  map: map,
+  title: 'Click to zoom2'
+  });
+
+
 }
 
     </script>

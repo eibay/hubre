@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>Data Layer: Simple</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
@@ -22,13 +22,17 @@
 var map;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 8
+    zoom: 4,
+    center: {lat: -28, lng: 137}
   });
+
+  // NOTE: This uses cross-domain XHR, and may not work on older browsers.
+  // map.data.loadGeoJson('https://storage.googleapis.com/maps-devrel/google.json');
+  map.data.loadGeoJson('http://www.telize.com/geoip');
 }
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-        async defer></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
   </body>
 </html>

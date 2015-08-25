@@ -1,5 +1,5 @@
 class Propertie < ActiveRecord::Base
-	belongss_to :user
+	belongs_to :user
 
 	def can_delete?(user)
 		user.id ==self.user_id
