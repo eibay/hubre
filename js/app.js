@@ -8,16 +8,32 @@
 // //   anchor: new google.maps.Point(17, 34),
 // //   scaledSize: new google.maps.Size(25, 25)
 // };
-var icon2 = {};
+// var icon2 = {};
+var melbourne = {lat: -37.8131869, lng: 144.9629796};
 
+var map = new google.maps.Map(document.getElementById('map'), {
+  center: melbourne,
+  zoom: 12,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+});
+
+var icon = {
+  url: place.icon,
+  size: new google.maps.Size(71, 71),
+  origin: new google.maps.Point(0, 0),
+  anchor: new google.maps.Point(17, 34),
+  scaledSize: new google.maps.Size(25, 25)
+};
+
+var marker = new google.maps.Marker({
+  position: latLng,
+  map: map,
+  icon: icon
+  title: 'Click To Edit/View Details'
+});
 
 function initAutocomplete() {
-  var myLatlng = {lat: -37.8131869, lng: 144.9629796};
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: myLatlng,
-    zoom: 12,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  });
+
 
   // Create the search box and link it to the UI element.
   var input = document.getElementById('pac-input');
@@ -71,6 +87,8 @@ function initAutocomplete() {
       } else {
         bounds.extend(place.geometry.location);
       }
+
+      alert("Place: " + place.geometry.location);
     });
     map.fitBounds(bounds);
   }); //End of get places
@@ -78,6 +96,11 @@ function initAutocomplete() {
     map.addListener('click', function(e) {
     placeMarkerAndPanTo(e.latLng, map);
   });
+
+  //   map.addListener('click', function(e) {
+  //   findMarkerLocation(e.latLng, map);
+  //   alert("Init Loop");
+  // });
 
 }
 
@@ -87,21 +110,36 @@ function placeMarkerAndPanTo(latLng, map) {
   var marker = new google.maps.Marker({
     position: latLng,
     map: map,
-    icon: icon2
+    icon: icon
   });
   map.panTo(latLng);
 
-    var marker = new google.maps.Marker({
-    position: latLng,
-    map: map,
-    title: 'Click To Edit/View Details'
-  });
-
-    marker.addListener('click', function() {
-    map.setZoom(12);
-    map.setCenter(marker.getPosition());
     
-    alert("This is the position:\n" + marker.getPosition());
-    alert("PlaceID:\n" + place.place_id);
+}
+
+function findMarkerLocation(latLng, map){
+  
+  // var marker = new google.maps.Marker({
+  //   position: latLng,
+  //   map: map,
+  //   icon: icon
+  //   title: 'Click To Edit/View Details'
+  // });
+
+  //   marker.addListener('click', function() {
+  //   map.setZoom(12);
+  //   map.setCenter(marker.getPosition());
+    
+  //   alert("This is the position:\n" + marker.getPosition());
+  //   // alert("PlaceID:\n" + place.place_id);
+  // });
+  //   var marker = new google.maps.Marker({map: map});
+
+    marker.addListener("click", function(event) {
+    var lat = event.latLng.lat();
+    var lng = event.latLng.lng();
+    // populate yor box/field with lat, lng
+    alert("Latitude:=" + lat + "; Longitude=" + lng);
+    // alert("This is the position:\n" + marker.getPosition());
   });
 }
