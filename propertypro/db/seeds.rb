@@ -11,15 +11,14 @@
 #   password = "pro"
 #   User.create!(
 #               email: email,
-#               password:              password,)
+#               password: password,)
 # end
-
 10.times do |n|
   Propertie.create!(
   label: "House-#{n+1}",
   address: "Address #{n + 1}",
-  latitude: -37.8131869 + (n + 3),
-  longitude: 144.9629796 + (n + 2),
+  latitude: -37.9031869 + rand(0.1..0.2),
+  longitude: 144.1629796 + rand(0.1..0.99),
   # type: "Type #{n + 1}",
   size: "3500")
 end
