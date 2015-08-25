@@ -18,8 +18,8 @@
   Propertie.create!(
   label: "House-#{n+1}",
   address: "Address #{n + 1}",
-  latitude: "-37.8131869",
-  longitude: "144.9629796",
-  # type: "",
+  latitude: -37.8131869 + (n + 3),
+  longitude: 144.9629796 + (n + 2),
+  # type: "Type #{n + 1}",
   size: "3500")
 end
