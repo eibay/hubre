@@ -32,3 +32,9 @@ height: 500px;
 	background-color: grey;
 	height: 100%
 }
+
+/*MAP STYLES*/
+#map {
+  height: 100%;
+  width: 100%;
+}
