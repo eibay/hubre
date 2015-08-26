@@ -11,8 +11,6 @@ Rails.application.routes.draw do
 
 # Properties
 
-get '/property' => 'properties#index'
-
  # post '/property/new' => 'properties#create'
  # get '/property/:id' => 'properties#show'
  # put  'property/edit' => 'properties#edit'
