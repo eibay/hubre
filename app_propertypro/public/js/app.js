@@ -104,7 +104,7 @@ var displayProperties = function(properties){
                  '<p>Size: '     + size  + '</p>' +
                  '<p>Latitude: ' + lat   + '</p>' +
                  '<p>Longitude: '+ lng   + '</p>'
-        content : content
+        // content : content
       }
     });
   });
@@ -114,6 +114,7 @@ var options = {
   url: 'http://localhost:3000/properties'
 }
 $.ajax(options).done(displayProperties);
+
 // --------  End Display User's Shortlisted Properties --------
 
 
