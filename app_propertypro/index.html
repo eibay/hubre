@@ -1,48 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>PropertyPro</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="public/css/style.css">
-  <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
-  <script src="http://maps.google.com/maps/api/js?libraries=places&callback=initAutocomplete" async defer"></script>
-  <script type="text/javascript" src="public/js/jquery.js"></script>
-	<script src="public/js/gmaps.js"></script>
-
+    <meta charset="UTF-8">
+    <title>PropertyPro</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="public/css/style.css">
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="public/js/jquery.js"></script>
+    <script src="public/js/gmaps.js"></script>
 </head>
+
 <body>
-		
-	<span id="top-bar">'</span>
+        
+    <span id="top-bar">'</span>
 
-	<div id="main">
+    <div id="main">
+    <!--==============   LEFT SIDE   =======================-->
+        <div id="left-column" class="col-md-3">
 
-		<div id="left-column" class="col-md-3">
+            <div id="box-login">
+                <!-- Nav Tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#existing-user" aria-controls="existing-user" role="tab" data-toggle="tab">Login</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#new-user" aria-controls="new-user" role="tab" data-toggle="tab">Create Acc</a>
+                    </li>
+                </ul>    
+                
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="existing-user">
+                        <input placeholder="email">
+                        <input placeholder="password">
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="new-user">
+                        <input placeholder="email">
+                        <input placeholder="password">
+                    </div>
+                </div>
 
-			<div id="box-login">
-				<input placeholder="email">
-				<input placeholder="password">
-			</div>
+            </div>
 
-			<div id="property-list">
-	      <div class="span3">
-	        <h3>Property Listings</h3>
-	        <ul id="markers-with-coordinates">
-	        </ul>
-	      </div>
-			</div>
+            <div id="property-list">
 
-		</div>
-		
-		<div id="right-column" class="col-md-9">
-	    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-			<div id="map"></div>
-		</div>
-	</div> 
-	
-	
+                      <div class="span3">
+                        <h3>Property Listings</h3>
+                        <ul id="markers-with-coordinates">
+                        </ul>
+                      </div>
+                
+            </div>
 
-  <script src="public/js/app.js"></script>
+        </div>
+
+    <!--==============   RIGHT SIDE   =======================-->
+        <div id="right-column" class="col-md-9">
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            <div id="map"></div>
+        </div>
+
+    </div>
+
+ <script src="public/js/app.js"></script>
 
 </body>
 </html>
