@@ -15,7 +15,7 @@ class PropertiesController < ApplicationController
   end
 
   def propertie_params
-    params.require(:propertie).permit(:label, :address)
+    params.require(:propertie).permit(:label, :address, :latitude, :longitude, :type, :size)
   end
 
 end

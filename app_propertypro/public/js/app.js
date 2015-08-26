@@ -51,7 +51,8 @@ $(document).ready(function(){
   map = new GMaps({
     div: '#map',
     lat: -37.8131869,
-    lng: 144.9629796
+    lng: 144.9629796,
+    zoom: 10
   });
 
   GMaps.on('marker_added', map, function(marker) {

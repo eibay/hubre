@@ -1,12 +1,17 @@
 class UsersController < ApplicationController
   
-  def index
-  	render :index
+  # def index
+  # 	render :index
+  # end
+
+  # def home
+  # 	render :home
+  # end
+
+  def new
+    @user = User.new
   end
 
-  def home
-  	render :home
-  end
-
+  
 
 end

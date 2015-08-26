@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
-	has_secure_password
-	has_many :properties
+	has_many :properties, dependendent: :destroy
+  before_save   :downcase_email
+  
+  has_secure_password
 end
