@@ -1,6 +1,3 @@
-# field :coordinates, :type => Array
-# field :address
-
 class Propertie < ActiveRecord::Base
 	belongs_to :user
 

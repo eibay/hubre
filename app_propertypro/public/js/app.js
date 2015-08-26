@@ -201,7 +201,7 @@ var newProperty = function(){
   var address = $('#property-address').val();
 
   var data = {
-    property: {
+    propertie: {
       label: label,
       address: address
     }
