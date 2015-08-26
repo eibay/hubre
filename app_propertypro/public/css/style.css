@@ -1,11 +1,30 @@
 
 #top-bar {
 	display: block;
-	background: url("http://www.refreshproperty.com.au/images/Blog/original/1408107457_6_1.jpg");
-	background-size: contain;
-	height: 200px;
+	background: url("http://www.hebburntownfc.co.uk/wp-content/uploads/2012/07/footballpitch.jpg");
+	/*background-size: contain;*/
+	/*background-color: lightgreen; */
+	height: 100px;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
 }
-
+	#top-bar p {
+		padding: 0px;
+		margin: auto 0;
+		display: inline-block;
+		height: 100%;
+		font-size: 4em;
+	}
+	#top-bar .prop {
+		font-family: 'Bree Serif', serif;
+		color: white;
+	}
+	#top-bar .pro {
+		font-family: 'Bree Serif', serif;
+		/*font-family: 'Kaushan Script', cursive;*/
+		color: black;
+	}
 #main{
 height: 500px;
 }
@@ -15,18 +34,24 @@ height: 500px;
 	height: 100%;
 	padding: 0px;
 }
-	#existing-user input {
-		margin-top: 10px;
-		margin-left: 10px;
+	/*Login area*/
+	#left-column input{
+		margin: 2% auto 0px;
 		display: block;
+		text-align: center;
+	}
+	#left-column button{
+		margin: 2% auto 2%;
+		display: block;
+		text-align: center;
 	}
 
-	#property-list {
-		background-color: lightyellow;
-		margin-top: 60px;
-		min-height: 70%;
-		width: 100%; 
-	}
+#property-list {
+	background-color: lightyellow;
+	margin-top: 0px;
+	min-height: 70%;
+	width: 100%; 
+}
 
 #right-column {
 	background-color: grey;
