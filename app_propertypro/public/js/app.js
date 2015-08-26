@@ -45,44 +45,34 @@ $(document).on('click', '.pan-to-marker', function(e) {
   }
 
   map.setCenter(lat, lng);
-}); 
-// ------ Update Center End ------
-
+});
 
 $(document).ready(function(){
   map = new GMaps({
     div: '#map',
     lat: -37.8131869,
-    lng: 144.9629796,
-    zoom: 11
+    lng: 144.9629796
   });
 
   GMaps.on('marker_added', map, function(marker) {
+    $('#markers-with-index').append('<li><a href="#" class="pan-to-marker" data-marker-index="' + map.markers.indexOf(marker) + '">' + marker.title + '</a></li>');
 
-    $('#markers-with-coordinates').append('<li><a href="#" class="pan-to-marker" data-marker-lat="' 
-      + marker.getPosition().lat() 
-      + '" data-marker-lng="' + marker.getPosition().lng() 
-      + '">' + marker.title + '</a></li>');
-
+    $('#markers-with-coordinates').append('<li><a href="#" class="pan-to-marker" data-marker-lat="' + marker.getPosition().lat() + '" data-marker-lng="' + marker.getPosition().lng() + '">' + marker.title + '</a></li>');
   });
 
   GMaps.on('click', map.map, function(event) {
     var index = map.markers.length;
     var lat = event.latLng.lat();
     var lng = event.latLng.lng();
-    var icon = "http://www.clker.com/cliparts/Z/x/U/0/B/3/red-pin.svg";
-    // var template = $('#edit_marker_template').text();
 
-    // var content = template.replace(/{{index}}/g, index).replace(/{{lat}}/g, lat).replace(/{{lng}}/g, lng);
+    var template = $('#edit_marker_template').text();
+
+    var content = template.replace(/{{index}}/g, index).replace(/{{lat}}/g, lat).replace(/{{lng}}/g, lng);
 
     map.addMarker({
       lat: lat,
       lng: lng,
       title: 'Property: #' + index,
-      icon : {
-            scaledSize : new google.maps.Size(60, 60),
-            url : icon
-          },
       infoWindow: {
         content : "<p><a href='#'>Edit Details</a></p>"
       }
@@ -114,9 +104,9 @@ var displayProperties = function(properties){
                  '<p>Size: '     + size  + '</p>' +
                  '<p>Latitude: ' + lat   + '</p>' +
                  '<p>Longitude: '+ lng   + '</p>'
+        content : content
       }
     });
-
   });
 }
 
