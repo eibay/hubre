@@ -15,7 +15,7 @@ height: 500px;
 	height: 100%;
 	padding: 0px;
 }
-	#box-login input {
+	#existing-user input {
 		margin-top: 10px;
 		margin-left: 10px;
 		display: block;
@@ -30,7 +30,8 @@ height: 500px;
 
 #right-column {
 	background-color: grey;
-	height: 100%
+	height: 100%;
+	padding: 0px;
 }
 
 /*MAP STYLES*/
