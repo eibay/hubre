@@ -50,12 +50,12 @@ $(document).on('click', '.pan-to-marker', function(e) {
 
 
 $(document).ready(function(){
-  // map = new GMaps({
-  //   div: '#map',
-  //   lat: -37.8131869,
-  //   lng: 144.9629796,
-  //   zoom: 11
-  // });
+  map = new GMaps({
+    div: '#map',
+    lat: -37.8131869,
+    lng: 144.9629796,
+    zoom: 11
+  });
 
   GMaps.on('marker_added', map, function(marker) {
 
@@ -120,7 +120,7 @@ var displayProperties = function(properties){
 }
 
 var options = {
-  url: 'http://localhost:3000/property'
+  url: 'http://localhost:3000/properties'
 }
 $.ajax(options).done(displayProperties);
 // --------  End Display User's Shortlisted Properties --------
@@ -130,22 +130,22 @@ $.ajax(options).done(displayProperties);
 // Create the search box and link it to the UI element.
 function initAutocomplete() {
 
-  map = new GMaps({
-    div: '#map',
-    lat: -37.8131869,
-    lng: 144.9629796,
-    zoom: 11
-  });
+  // map = new GMaps({
+  //   div: '#map',
+  //   lat: -37.8131869,
+  //   lng: 144.9629796,
+  //   zoom: 11
+  // });
 
 
   var input = document.getElementById('pac-input');
   var searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-  // Bias the SearchBox results towards current map's viewport.
-  map.addListener('bounds_changed', function() {
-    searchBox.setBounds(map.getBounds());
-  });
+  // // Bias the SearchBox results towards current map's viewport.
+  // map.addListener('bounds_changed', function() {
+  //   searchBox.setBounds(map.getBounds());
+  // });
 }
   // var markers = [];
   // // [START region_getplaces]
