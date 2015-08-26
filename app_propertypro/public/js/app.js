@@ -163,16 +163,17 @@ function initAutocomplete() {
   // });
 // }
 //Adding New Property
-var newProperty = function(Label, lat, lng, type, size){
-  var label = $('#property-label').val();
+var newProperty = function(address, lat, lng, type, size){
+  var label = "Tester for new button";
+  console.log('I got this far')
   var data = {
     propertie: {
       label: label,
-      address: "",
-      latitude: lat,
+      address: address,
+      latitude: lat, 
       longitude: lng,
-      type: "",
-      size: ""
+      type: type, 
+      size: size
     }
   }
   $.ajax({
@@ -185,11 +186,11 @@ var newProperty = function(Label, lat, lng, type, size){
 }
 $('#map').on('click', '.new-property-btn', function() {
   var address = $(this).parent().find('.address').html();
-  console.log($(this).parent().find('.lat').html());
-  console.log($(this).parent().find('.lng').html());
-  console.log($(this).parent().find('.type').html());
-  console.log($(this).parent().find('.size').html());
-  // newProperty();
+  var lat = $(this).parent().find('.lat').html();
+  var lng = $(this).parent().find('.lng').html();
+  var type = $(this).parent().find('.type').html();
+  var size = $(this).parent().find('.size').html();
+  newProperty(address, lat, lng, type, size);
 });
 
 
