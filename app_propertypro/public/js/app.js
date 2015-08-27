@@ -29,7 +29,11 @@ var geocodeLatLng = function(geocoder, map, infowindow, lat, lng, index) {
             var content = "<div>";
             content += "<p>Label: <input type='text' class='pin-label'> </p>";
             content += "<p class='pin-address'>Address "+address+"</p>";
-            content += "<p class='type'>Type:</p>";
+            content += "<p>Type: "
+            content += "<select class='pin-type'><option>Apartment</option>";
+            content += "<option>Townhouse</option>";
+            content += "<option>House</option>";
+            content += "<option>Land</option></select></p>";
             content += "<p>Size: <input class='pin-size'> m</p>";
             content += "<button class='new-property-btn'>Save Property</button>";
             content += "</div>";
@@ -103,7 +107,7 @@ $(document).ready(function(){
 });
 //========================================================================================================================
 //Adding New Property
-var newProperty = function(label, address, lat, lng, type, size){
+var newProperty = function(label, address, lat, lng, proptype, size){
   // type: type, 
   var data = {
     propertie: {
@@ -111,11 +115,12 @@ var newProperty = function(label, address, lat, lng, type, size){
       address: address,
       latitude: lat, 
       longitude: lng,
-      size: size
+      size: size,
+      proptype: proptype
     }
   }
 
-    console.log(data)
+    console.log(proptype)
   $.ajax({
     url: 'http://localhost:3000/properties',
     data: data,
@@ -130,9 +135,10 @@ $('#map').on('click', '.new-property-btn', function() {
   var address = $(this).parent().find('.pin-address').html();
   var lat = newLat;
   var lng = newLng;
-  var type = $(this).parent().find('.type').html();
+  var proptype = $(this).parent().find('.pin-type').val();
   var size = $(this).parent().find('.pin-size').val();
-  newProperty(label, address, lat, lng, type, size);
+  console.log(proptype)
+  newProperty(label, address, lat, lng, proptype, size);
 });
 
 //===========SAVED PROPERTIES========================================================================
