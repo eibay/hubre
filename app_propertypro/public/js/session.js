@@ -23,6 +23,7 @@ var newUser = function(email, password, password_confirm){
     type: 'post'
   }).done(function(){
     resetPasswordForm();
+    hideUserForm();
   });
 }
 
@@ -44,5 +45,10 @@ $('.new-account-btn').on('click', function(){
 function resetPasswordForm(){
   $('.password_confirm').val("");
   $('.password').val("").focus();
+}
+
+function hideUserForm(){
+  $('.login').hide();
+  $('.signup').hide();
 }
 

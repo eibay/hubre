@@ -611,9 +611,9 @@ GMaps.prototype.removeControl = function(control) {
 };
 
 GMaps.prototype.createMarker = function(options) {
-  if (options.lat == undefined && options.lng == undefined && options.position == undefined) {
-    throw 'No latitude or longitude defined.';
-  }
+  // if (options.lat == undefined && options.lng == undefined && options.position == undefined) {
+  //   throw 'No latitude or longitude defined.';
+  // }
 
   var self = this,
       details = options.details,

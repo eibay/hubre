@@ -26,16 +26,17 @@ var geocodeLatLng = function(geocoder, map, infowindow, lat, lng, index) {
       if (results[1]) {
             var address = results[1].formatted_address;
             var index = map.markers.length;
-            var content = "<div>";
-            content += "<p>Label: <input type='text' class='pin-label'> </p>";
-            content += "<p class='pin-address'>Address "+address+"</p>";
+            var content = "<div class='pins'>";
+            content += "<input type='text' class='pin-label' placeholder='Label'>";
+            content += "<p class='pin-address'>Address: <span>"+address+"</span></p>";
+            content += "<input type='text' class='pin-note' placeholder='Notes / Listing Hyperlink'>";
             content += "<p>Type: "
             content += "<select class='pin-type'><option>Apartment</option>";
             content += "<option>Townhouse</option>";
             content += "<option>House</option>";
             content += "<option>Land</option></select></p>";
-            content += "<p>Size: <input class='pin-size'> m</p>";
-            content += "<button class='new-property-btn'>Save Property</button>";
+            content += "<p class='pin-size'>Size: <input placeholder='Meters'></p>";
+            content += "<button class='new-property-btn'>Save</button>";
             content += "</div>";
 
             map.addMarker({
@@ -107,7 +108,7 @@ $(document).ready(function(){
 });
 //========================================================================================================================
 //Adding New Property
-var newProperty = function(label, address, lat, lng, proptype, size){
+var newProperty = function(label, address, lat, lng, proptype, size, note){
   // type: type, 
   var data = {
     propertie: {
@@ -116,7 +117,8 @@ var newProperty = function(label, address, lat, lng, proptype, size){
       latitude: lat, 
       longitude: lng,
       size: size,
-      proptype: proptype
+      proptype: proptype,
+      note: note
     }
   }
 
@@ -136,7 +138,8 @@ $('#map').on('click', '.new-property-btn', function() {
   var lng = newLng;
   var proptype = $(this).parent().find('.pin-type').val();
   var size = $(this).parent().find('.pin-size').val();
-  newProperty(label, address, lat, lng, proptype, size);
+  var note = $(this).parent().find('.pin-note').val();
+  newProperty(label, address, lat, lng, proptype, size, note);
 });
 
 //===========SAVED PROPERTIES========================================================================
