@@ -19,7 +19,5 @@ class PropertiesController < ApplicationController
     params.require(:propertie).permit(:label, :address, :latitude, :longitude, :size, :proptype)
 
   end
-
-
-
+  
 end

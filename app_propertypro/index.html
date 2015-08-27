@@ -13,6 +13,8 @@
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript" src="public/js/jquery.js"></script>
     <script src="public/js/gmaps.js"></script>
+    <script src="public/js/maskedPassword.js"></script>
+
 </head>
 <body>
 
@@ -32,7 +34,7 @@
 						<a href="#existing-user" aria-controls="existing-user" role="tab" data-toggle="tab">Login</a>
 					</li>
 					<li role="presentation">
-						<a href="#new-user" aria-controls="new-user" role="tab" data-toggle="tab">Create Acc</a>
+						<a href="#new-user" aria-controls="new-user" role="tab" data-toggle="tab">Sign Up</a>
 					</li>
 				</ul>	
 				
@@ -43,9 +45,10 @@
 						<button>Login</button>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="new-user">
-						<input placeholder="email">
-						<input placeholder="password">
-						<button>Create New Account</button>
+						<input placeholder="email" name="email" class='email'>
+            <input placeholder="password"type="password" class="password" name="password" />
+            <input placeholder="password"type="password" class="password_confirm" name="password_confirm" />
+						<button class='new-account-btn'>Create New Account</button>
 						<select>
 							<option>1</option>
 							<option>1</option>
@@ -70,5 +73,7 @@
         </div>
     </div>
   <script src="public/js/app.js"></script>
+  <script src="public/js/session.js"></script>
+
 </body>
 </html>

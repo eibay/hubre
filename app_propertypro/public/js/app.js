@@ -120,7 +120,6 @@ var newProperty = function(label, address, lat, lng, proptype, size){
     }
   }
 
-    console.log(proptype)
   $.ajax({
     url: 'http://localhost:3000/properties',
     data: data,
