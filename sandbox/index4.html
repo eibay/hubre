@@ -14,15 +14,18 @@
     <script type="text/javascript" src="public/js/jquery.js"></script>
     <script src="public/js/gmaps.js"></script>
 </head>
+
 <body>
     
   <span id="top-bar">
     <p class="prop">Property</p>
     <p class="pro">Pro</p>
   </span>
+
   <div id="main">
   <!--==============   LEFT SIDE   =======================-->
     <div id="left-column" class="col-md-3">
+
       <div id="box-login">
         <!-- Nav Tabs -->
         <ul class="nav nav-tabs" role="tablist">
@@ -47,7 +50,9 @@
           </div>
         </div>
             </div>
+
             <div id="property-list">
+
                       <div class="span3">
                         <h3>Property Listings</h3>
                         <ul id="markers-with-coordinates">
@@ -55,14 +60,32 @@
                       </div>
                 
             </div>
+
+            <button id="new-property-btn">New</button>
         </div>
           
     <!--==============   RIGHT SIDE   =======================-->
         <div id="right-column" class="col-md-9">
-            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            <!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
+              <div class="new-property-form row">
+                <div class="col-md-9 col-md-offset-3">
+                  <h3>PROPERTY DETAILS</h3>
+                  <label>Label:</label>
+                  <input name='new-label' class='new-label form-control'>
+                  <label>Address:</label>
+                  <input name='new-address' class='new-address form-control'>
+                  <label>Type:</label>
+                  <input name='new-type' class='new-type form-control'>
+                  <label>Size</label>
+                  <input name='new-size' class='new-size form-control'>
+                  <input name='new-btn' type="submit" class="btn btn-primary new-property-btn">
+                  <input name='exit-btn' type="exit" class="btn btn-primary new-property-btn">
+              </div>
+            </div>
             <div id="map"></div>
         </div>
     </div>
   <script src="public/js/app.js"></script>
+
 </body>
 </html>

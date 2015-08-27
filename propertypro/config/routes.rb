@@ -16,6 +16,6 @@ Rails.application.routes.draw do
  # put  'property/edit' => 'properties#edit'
 
   resources :users 
-  resources :properties, only: [:create, :destroy]
+  resources :properties
 
 end
