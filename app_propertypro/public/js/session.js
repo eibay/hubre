@@ -22,7 +22,7 @@ var newUser = function(email, password, password_confirm){
     data: data,
     type: 'post'
   }).done(function(){
-    alert('user created!');
+    resetPasswordForm();
   });
 }
 
@@ -35,10 +35,14 @@ $('.new-account-btn').on('click', function(){
   if (password === password_confirm) {
     newUser(email, password, password_confirm);
   }else{
-    alert("Sorry, password is not match.");
-    $('.password_confirm').val("");
-    $('.password').val("").focus();
+    alert("Sorry, password does not match.");
+    resetPasswordForm();
   }
 
 });
+
+function resetPasswordForm(){
+  $('.password_confirm').val("");
+  $('.password').val("").focus();
+}
 

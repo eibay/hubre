@@ -7,9 +7,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_url
+      render json: { message: 'success'}.to_json, status: 201
     else
-      render 'new'
+      render json: { message: 'failure'}.to_json, status: 422
     end
   end
 

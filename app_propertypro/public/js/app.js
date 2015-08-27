@@ -136,7 +136,6 @@ $('#map').on('click', '.new-property-btn', function() {
   var lng = newLng;
   var proptype = $(this).parent().find('.pin-type').val();
   var size = $(this).parent().find('.pin-size').val();
-  console.log(proptype)
   newProperty(label, address, lat, lng, proptype, size);
 });
 
