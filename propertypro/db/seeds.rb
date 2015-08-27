@@ -19,6 +19,6 @@
   address: "Address #{n + 1}",
   latitude: -37.9031869 + rand(0.1..0.2),
   longitude: 144.1629796 + rand(0.1..0.99),
-  # type: "Type #{n + 1}",
+  proptype: "Apartment Type#{rand(1..99)}",
   size: "3500")
 end

@@ -33,10 +33,7 @@ var geocodeLatLng = function(geocoder, map, infowindow, lat, lng, index) {
             content += "<p>Size: <input class='pin-size'> m</p>";
             content += "<button class='new-property-btn'>Save Property</button>";
             content += "</div>";
-<<<<<<< HEAD
-=======
 
->>>>>>> 963d66f2e81ec080f1af6c62fd9561b5208c17ef
             map.addMarker({
               lat: lat,
               lng: lng,
@@ -45,10 +42,7 @@ var geocodeLatLng = function(geocoder, map, infowindow, lat, lng, index) {
                 content : content
               }
             });
-<<<<<<< HEAD
-=======
 
->>>>>>> 963d66f2e81ec080f1af6c62fd9561b5208c17ef
       } else {
         window.alert('No results found');
       }
@@ -57,10 +51,7 @@ var geocodeLatLng = function(geocoder, map, infowindow, lat, lng, index) {
     }
   });
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 963d66f2e81ec080f1af6c62fd9561b5208c17ef
 //=======================================================================================
 //Dropped pin function
 // Update center
@@ -123,10 +114,7 @@ var newProperty = function(label, address, lat, lng, type, size){
       size: size
     }
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> 963d66f2e81ec080f1af6c62fd9561b5208c17ef
     console.log(data)
   $.ajax({
     url: 'http://localhost:3000/properties',
@@ -136,10 +124,7 @@ var newProperty = function(label, address, lat, lng, type, size){
     alert('success saving');
   });
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 963d66f2e81ec080f1af6c62fd9561b5208c17ef
 $('#map').on('click', '.new-property-btn', function() {
   var label = $(this).parent().find('.pin-label').val();
   var address = $(this).parent().find('.pin-address').html();
@@ -149,10 +134,7 @@ $('#map').on('click', '.new-property-btn', function() {
   var size = $(this).parent().find('.pin-size').val();
   newProperty(label, address, lat, lng, type, size);
 });
-<<<<<<< HEAD
-=======
 
->>>>>>> 963d66f2e81ec080f1af6c62fd9561b5208c17ef
 //===========SAVED PROPERTIES========================================================================
 //Display User's Shortlisted Properties
 var options = {
@@ -185,10 +167,7 @@ var displayProperties = function(properties){
     });
   });
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 963d66f2e81ec080f1af6c62fd9561b5208c17ef
 $.ajax(options).done(displayProperties);
 //===========================================================================================
 // Not currently in use
@@ -198,8 +177,4 @@ function initAutocomplete() {
   var searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 }
-<<<<<<< HEAD
-//===========================================================================================
-=======
-//===========================================================================================
->>>>>>> 963d66f2e81ec080f1af6c62fd9561b5208c17ef
+
