@@ -116,22 +116,63 @@ height: 500px;
 }
 
 /*===================================*/
-.pin-label .pin-size {
-	/*display: inline-block;*/
+.pins p {
+	font-family: 'PT Sans', sans-serif;	
+	font-weight: 700;
 }
 
-/*.pin-labelss {outline: 0;}*/
+.pins input {
+	font-family: 'PT Sans', sans-serif;	
+	/*font-weight: 700;*/
+	width: 100%;
+}
+	.pin-address span {
+		font-weight: 400;
+	}
+
+	.pin-note {
+		text-align: center;
+		border: none;
+		background-color: #EBEEED;
+		margin-bottom: 2px;
+	}
+	
+	.pin-type{
+		margin-bottom: 2px;
+		color: #000;
+	}
+		.pin-type option {
+		background: red;
+	}
 
 	.pin-label {
 		border: none;
-		border-bottom: 1px solid black;
+		background-color: #EBEEED;
+		/*border-bottom: 1px solid grey;*/
+		text-align: center;
 	}
 
-	.pin-size{
-		border: none;
-		border-bottom: 1px solid black;
-		width: 40%;
+	.pin-size {
+		display: inline-block;
+	}
+			.pin-size input {
+				border: none;
+				background-color: #EBEEED;
+				/*border-bottom: 1px solid grey;*/
+				width: 25%;
+				display: inline-block;
+				text-align: center;
+			}
+
+	.new-property-btn {
+		border-radius: 100%;
+		border-width: 0.5px;
+		background-color: #4BFDFD; 
+		font-weight: 700;
+		box-shadow: 0 4px 4px -2px #000000;
+		margin-bottom: 5px;
+		float: right;
 	}
 
-/*.eb {background-color: blue;}*/
+/*#4BFDFD;*/
 /*===================================*/
