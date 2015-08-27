@@ -117,21 +117,24 @@ height: 500px;
 
 /*===================================*/
 .pin-label .pin-size {
-  /*display: inline-block;*/
+
+	/*display: inline-block;*/
+
 }
 
 /*.pin-labelss {outline: 0;}*/
 
-  .pin-label {
-    border: none;
-    border-bottom: 1px solid black;
-  }
+	.pin-label {
+		border: none;
+		border-bottom: 1px solid black;
+	}
 
-  .pin-size{
-    border: none;
-    border-bottom: 1px solid black;
-    width: 40%;
-  }
+	.pin-size{
+		border: none;
+		border-bottom: 1px solid black;
+		width: 40%;
+	}
 
 /*.eb {background-color: blue;}*/
 /*===================================*/
+
