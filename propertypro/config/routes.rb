@@ -14,7 +14,12 @@ Rails.application.routes.draw do
  # post '/property/new' => 'properties#create'
  # get '/property/:id' => 'properties#show'
  # put  'property/edit' => 'properties#edit'
+ 
+  get   'signup'  =>  'users#new'
 
+  get   'login'   =>  'sessions#new'
+  post  'login'   =>  'sessions#create'
+  delete'logout'  =>  'sessions#destroy'
   resources :users 
   resources :properties
 
