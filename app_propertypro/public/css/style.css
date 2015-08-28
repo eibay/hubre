@@ -1,62 +1,62 @@
 
 #top-bar {
-	display: block;
-	background: url("http://www.hebburntownfc.co.uk/wp-content/uploads/2012/07/footballpitch.jpg");
-	/*background-size: contain;*/
-	/*background-color: lightgreen; */
-	height: 100px;
-	text-align: center;
-	margin: 0px;
-	padding: 0px;
+  display: block;
+  background: url("http://www.hebburntownfc.co.uk/wp-content/uploads/2012/07/footballpitch.jpg");
+  /*background-size: contain;*/
+  /*background-color: lightgreen; */
+  height: 100px;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
 }
-	#top-bar p {
-		padding: 0px;
-		margin: auto 0;
-		display: inline-block;
-		height: 100%;
-		font-size: 4em;
-	}
-	#top-bar .prop {
-		font-family: 'Bree Serif', serif;
-		color: white;
-	}
-	#top-bar .pro {
-		font-family: 'Bree Serif', serif;
-		/*font-family: 'Kaushan Script', cursive;*/
-		color: black;
-	}
+  #top-bar p {
+    padding: 0px;
+    margin: auto 0;
+    display: inline-block;
+    height: 100%;
+    font-size: 4em;
+  }
+  #top-bar .prop {
+    font-family: 'Bree Serif', serif;
+    color: white;
+  }
+  #top-bar .pro {
+    font-family: 'Bree Serif', serif;
+    /*font-family: 'Kaushan Script', cursive;*/
+    color: black;
+  }
 #main{
 height: 500px;
 }
 
 #left-column {
-	background-color: lightblue;
-	height: 100%;
-	padding: 0px;
+  background-color: lightblue;
+  height: 100%;
+  padding: 0px;
 }
-	/*Login area*/
-	#left-column input{
-		margin: 2% auto 0px;
-		display: block;
-		text-align: center;
-	}
-	#left-column button{
-		margin: 2% auto 2%;
-		display: block;
-		text-align: center;
-	}
+  /*Login area*/
+  #left-column input{
+    margin: 2% auto 0px;
+    display: block;
+    text-align: center;
+  }
+  #left-column button{
+    margin: 2% auto 2%;
+    display: block;
+    text-align: center;
+  }
 
 #property-list {
-	background-color: lightyellow;
-	margin-top: 0px;
-	min-height: 70%;
-	width: 100%; 
+  background-color: lightyellow;
+  margin-top: 0px;
+  min-height: 70%;
+  width: 100%; 
 }
 
 #right-column {
-	background-color: grey;
-	height: 100%;
-	padding: 0px;
+  background-color: grey;
+  height: 100%;
+  padding: 0px;
 }
 
 /*NEW PROPERTY FORM */
@@ -117,6 +117,62 @@ height: 500px;
 
 /*===================================*/
 .pins p {
+  font-family: 'PT Sans', sans-serif; 
+  font-weight: 700;
+}
+
+.pins input {
+  font-family: 'PT Sans', sans-serif; 
+  /*font-weight: 700;*/
+  width: 100%;
+}
+  .pin-address span {
+    font-weight: 400;
+  }
+
+  .pin-note {
+    text-align: center;
+    border: none;
+    background-color: #EBEEED;
+    margin-bottom: 2px;
+  }
+  
+  .pin-type{
+    margin-bottom: 2px;
+    color: #000;
+  }
+    .pin-type option {
+    background: red;
+  }
+
+  .pin-label {
+    border: none;
+    background-color: #EBEEED;
+    /*border-bottom: 1px solid grey;*/
+    text-align: center;
+  }
+
+  .pin-size {
+    display: inline-block;
+  }
+      .pin-size input {
+        border: none;
+        background-color: #EBEEED;
+        /*border-bottom: 1px solid grey;*/
+        width: 25%;
+        display: inline-block;
+        text-align: center;
+      }
+
+  .new-property-btn {
+    border-radius: 100%;
+    border-width: 0.5px;
+    background-color: #4BFDFD; 
+    font-weight: 700;
+    box-shadow: 0 4px 4px -2px #000000;
+    margin-bottom: 5px;
+    float: right;
+=======
 	font-family: 'PT Sans', sans-serif;	
 	font-weight: 700;
 }
@@ -172,7 +228,9 @@ height: 500px;
 		box-shadow: 0 4px 4px -2px #000000;
 		margin-bottom: 5px;
 		float: right;
+
 	}
 
 /*#4BFDFD;*/
 /*===================================*/
+

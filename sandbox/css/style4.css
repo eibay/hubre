@@ -1,0 +1,123 @@
+
+#top-bar {
+  display: block;
+  background: url("http://www.hebburntownfc.co.uk/wp-content/uploads/2012/07/footballpitch.jpg");
+  /*background-size: contain;*/
+  /*background-color: lightgreen; */
+  height: 100px;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  z-index: 100;
+}
+  #top-bar p {
+    padding: 0px;
+    margin: auto 0;
+    display: inline-block;
+    height: 100%;
+    font-size: 4em;
+  }
+  #top-bar .prop {
+    font-family: 'Bree Serif', serif;
+    color: white;
+  }
+  #top-bar .pro {
+    font-family: 'Bree Serif', serif;
+    /*font-family: 'Kaushan Script', cursive;*/
+    color: black;
+  }
+#main{
+height: 700px;
+}
+
+#left-column {
+  background-color: lightblue;
+  height: 100%;
+  padding: 0px;
+}
+  /*Login area*/
+  #left-column input{
+    margin: 2% auto 0px;
+    display: block;
+    text-align: center;
+  }
+  #left-column button{
+    margin: 2% auto 2%;
+    display: block;
+    text-align: center;
+  }
+
+#property-list {
+  background-color: lightyellow;
+  margin-top: 0px;
+  min-height: 70%;
+  width: 100%; 
+}
+
+#right-column {
+  background-color: grey;
+  height: 100%;
+  padding: 0px;
+}
+
+/*NEW PROPERTY FORM */
+.new-property-form{
+  position: absolute;
+  display: none;
+  top: 0%;
+  right: 50%;
+  z-index: 10;
+  background: url("http://www.hebburntownfc.co.uk/wp-content/uploads/2012/07/footballpitch.jpg");
+  /*background-color: rgba(50, 223, 50, 0.5);*/
+}
+
+
+
+/*MAP STYLES*/
+#map {
+  height:  100%;
+  width:   100%;
+}
+
+   /*SEARCH*/
+   .controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
