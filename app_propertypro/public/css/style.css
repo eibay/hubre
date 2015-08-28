@@ -4,7 +4,7 @@
   background: url("http://www.hebburntownfc.co.uk/wp-content/uploads/2012/07/footballpitch.jpg");
   /*background-size: contain;*/
   /*background-color: lightgreen; */
-  height: 100px;
+  height: 10vh;
   text-align: center;
   margin: 0px;
   padding: 0px;
@@ -14,7 +14,7 @@
     margin: auto 0;
     display: inline-block;
     height: 100%;
-    font-size: 4em;
+    font-size: 3em;
   }
   #top-bar .prop {
     font-family: 'Bree Serif', serif;
@@ -25,13 +25,16 @@
     /*font-family: 'Kaushan Script', cursive;*/
     color: black;
   }
+
+/*====================================================================================*/
+
 #main{
-height: 500px;
+  height: 90vh;
 }
 
 #left-column {
-  background-color: lightblue;
-  height: 100%;
+  background-color: white;
+  /*height: 100%;*/
   padding: 0px;
 }
   /*Login area*/
@@ -44,14 +47,61 @@ height: 500px;
     margin: 2% auto 2%;
     display: block;
     text-align: center;
+    width: 90%;
   }
 
-#property-list {
-  background-color: lightyellow;
-  margin-top: 0px;
-  min-height: 70%;
-  width: 100%; 
+/*================================================================================*/
+#box-login {
+  height: 25vh;
 }
+    .logintab {
+      background-color: #929292;
+      width: 50%;
+      text-align: center;
+    }
+    #existing-user input {height: 5vh;}
+
+    .signuptab {
+      background-color: #929292;
+      width: 50%;
+      text-align: center;
+    }
+
+    #new-user input {height: 3.4vh;}
+/*================================================================================*/
+/*Existing*/
+    .existing-pins {font-weight: 700;}
+        .existing-pins span {font-weight: 400;}
+        .existing-pins-label { text-decoration: underline;}
+/*         .existing-pins-address {font-weight: 400;}
+        .existing-pins-note {font-weight: 400;}
+        .existing-pins-type {font-weight: 400;}
+        .existing-pins-size {font-weight: 400;}*/
+
+        .save-sidebar {
+          background-color: ##0080FF;
+          border: solid grey;
+          border-radius: 2px;
+          color: black;
+        }
+    
+        #property-list {
+          background-color: #0080FF;
+          overflow: scroll;
+          height: 65vh;
+        }
+        #property-list-title {
+          text-align: center;
+          margin-bottom: 3px; 
+          margin-top: 3px;
+          /*text-decoration: underline;*/
+          font-weight: 700;
+          color: white;
+          font-family: 'Bree Serif', serif;
+        }
+
+/*================================================================================*/
+
 
 #right-column {
   background-color: grey;
@@ -123,18 +173,22 @@ height: 500px;
 
 .pins input {
   font-family: 'PT Sans', sans-serif; 
-  /*font-weight: 700;*/
-  width: 100%;
 }
+  .pin-label {
+    border: none;
+    background-color: #EBEEED;
+    text-align: center;
+    width: 100%;
+  }
   .pin-address span {
     font-weight: 400;
   }
-
   .pin-note {
     text-align: center;
     border: none;
     background-color: #EBEEED;
     margin-bottom: 2px;
+    width: 100%;
   }
   
   .pin-type{
@@ -145,17 +199,11 @@ height: 500px;
     background: red;
   }
 
-  .pin-label {
-    border: none;
-    background-color: #EBEEED;
-    /*border-bottom: 1px solid grey;*/
-    text-align: center;
-  }
 
   .pin-size {
     display: inline-block;
   }
-      .pin-size input {
+      .pin-size-input {
         border: none;
         background-color: #EBEEED;
         /*border-bottom: 1px solid grey;*/
@@ -172,65 +220,5 @@ height: 500px;
     box-shadow: 0 4px 4px -2px #000000;
     margin-bottom: 5px;
     float: right;
-=======
-	font-family: 'PT Sans', sans-serif;	
-	font-weight: 700;
-}
-
-.pins input {
-	font-family: 'PT Sans', sans-serif;	
-	/*font-weight: 700;*/
-	width: 100%;
-}
-	.pin-address span {
-		font-weight: 400;
-	}
-
-	.pin-note {
-		text-align: center;
-		border: none;
-		background-color: #EBEEED;
-		margin-bottom: 2px;
-	}
-	
-	.pin-type{
-		margin-bottom: 2px;
-		color: #000;
-	}
-		.pin-type option {
-		background: red;
-	}
-
-	.pin-label {
-		border: none;
-		background-color: #EBEEED;
-		/*border-bottom: 1px solid grey;*/
-		text-align: center;
-	}
-
-	.pin-size {
-		display: inline-block;
-	}
-			.pin-size input {
-				border: none;
-				background-color: #EBEEED;
-				/*border-bottom: 1px solid grey;*/
-				width: 25%;
-				display: inline-block;
-				text-align: center;
-			}
-
-	.new-property-btn {
-		border-radius: 100%;
-		border-width: 0.5px;
-		background-color: #4BFDFD; 
-		font-weight: 700;
-		box-shadow: 0 4px 4px -2px #000000;
-		margin-bottom: 5px;
-		float: right;
-
-	}
-
-/*#4BFDFD;*/
-/*===================================*/
+  }
 
