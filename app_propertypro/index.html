@@ -25,50 +25,53 @@
 
 	<div id="main">
 	<!--==============   LEFT SIDE   =======================-->
-		<div id="left-column" class="col-md-3">
+		<div id="left-column" class="col-md-2">
 
 			<div id="box-login">
 				<!-- Nav Tabs -->
 				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active login">
+					<li role="presentation" class="active login logintab">
 						<a href="#existing-user" aria-controls="existing-user" role="tab" data-toggle="tab">Login</a>
 					</li>
-					<li role="presentation" class="new-user signup">
+					<li role="presentation" class="new-user signup signuptab">
 						<a href="#new-user" aria-controls="new-user" role="tab" data-toggle="tab">Sign Up</a>
 					</li>
 				</ul>	
 				
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane active login" id="existing-user">
+            
 						<input placeholder="email" name="email" class='email-login'>
-            <input placeholder="password"type="password" class="password-login" name="password-login" />
-						<button class='login-btn'>Login</button>
+            <input id="inputloginpass" placeholder="password"type="password" class="password-login" name="password-login" />
+						<button type="button" class="btn btn-primary">Login</button>
+
 					</div>
 
 					<div role="tabpanel" class="tab-pane signup" id="new-user">
-						<input placeholder="email" name="email" class='email'>
+						<input placeholder="e-mail" name="email" class='email'>
             <input placeholder="password"type="password" class="password" name="password" />
-            <input placeholder="password"type="password" class="password_confirm" name="password_confirm" />
-						<button class='new-account-btn'>Create New Account</button>
+            <input placeholder="confirm password"type="password" class="password_confirm" name="password_confirm" />
+						<button type="button" class="btn btn-primary new-account-btn">Create New Account</button>
 					</div>
 				</div>
-            </div>
+      </div>
+
             <div id="property-list">
                       <div class="span3">
-                        <h3>Property Listings</h3>
-                        <ul id="markers-with-coordinates">
-                        </ul>
+                        <p id='property-list-title'>PropertyPro List</p>
+                        <div id="saved-property-list">
+                        </div>
                       </div>
                 
             </div>
-        </div>
+    </div>
           
     <!--==============   RIGHT SIDE   =======================-->
-        <div id="right-column" class="col-md-9">
-            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="right-column" class="col-md-10">
+            <!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
             <div id="map"></div>
         </div>
-    </div>
+  </div>
   <script src="public/js/app.js"></script>
   <script src="public/js/session.js"></script>
 
