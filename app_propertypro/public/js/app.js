@@ -1,19 +1,20 @@
 var map;
 // Update position
-$(document).on('submit', '.edit_marker', function(e) {
-  e.preventDefault();
-  var $index = $(this).data('marker-index');
-  $lat = $('#marker_' + $index + '_lat').val();
-  $lng = $('#marker_' + $index + '_lng').val();
-  var template = $('#edit_marker_template').text();
-  // Update form values
-  var content = template.replace(/{{index}}/g, $index).replace(/{{lat}}/g, $lat).replace(/{{lng}}/g, $lng);
-  map.markers[$index].setPosition(new google.maps.LatLng($lat, $lng));
-  map.markers[$index].infoWindow.setContent(content);
-  $marker = $('#markers-with-coordinates').find('li').eq(0).find('a');
-  $marker.data('marker-lat', $lat);
-  $marker.data('marker-lng', $lng);
-});
+// $(document).on('submit', '.edit_marker', function(e) {
+//   e.preventDefault();
+//   console.log('doing this')
+//   var $index = $(this).data('marker-index');
+//   $lat = $('#marker_' + $index + '_lat').val();
+//   $lng = $('#marker_' + $index + '_lng').val();
+//   var template = $('#edit_marker_template').text();
+//   // Update form values
+//   var content = template.replace(/{{index}}/g, $index).replace(/{{lat}}/g, $lat).replace(/{{lng}}/g, $lng);
+//   map.markers[$index].setPosition(new google.maps.LatLng($lat, $lng));
+//   map.markers[$index].infoWindow.setContent(content);
+//   $marker = $('#markers-with-coordinates').find('li').eq(0).find('a');
+//   $marker.data('marker-lat', $lat);
+//   $marker.data('marker-lng', $lng);
+// });
 //========================================================================================================================
 var geocoder = new google.maps.Geocoder;
 var newLat; 
@@ -38,7 +39,7 @@ var geocodeLatLng = function(geocoder, map, infowindow, lat, lng, index) {
             content += "<p class='pin-size'>Size: <input placeholder='Meters'></p>";
             content += "<button class='new-property-btn'>Save</button>";
             content += "</div>";
-
+ console.log('f')
             map.addMarker({
               lat: lat,
               lng: lng,
@@ -87,7 +88,7 @@ $(document).ready(function(){
   });
   GMaps.on('marker_added', map, function(marker) {
     $('#markers-with-index').append('<li><a href="#" class="pan-to-marker" data-marker-index="' + map.markers.indexOf(marker) + '">' + marker.title + '</a></li>');
-    $('#markers-with-coordinates').append('<li><a href="#" class="pan-to-marker" data-marker-lat="' + marker.getPosition().lat() + '" data-marker-lng="' + marker.getPosition().lng() + '">' + marker.title + '</a></li>');
+    // $('#markers-with-coordinates').append('<li><a href="#" class="pan-to-marker" data-marker-lat="' + marker.getPosition().lat() + '" data-marker-lng="' + marker.getPosition().lng() + '">' + marker.title + '</a></li>');
   });
   GMaps.on('click', map.map, function(event) {
     var lat = event.latLng.lat();
@@ -95,14 +96,9 @@ $(document).ready(function(){
     var template = $('#edit_marker_template').text();
 
     var infowindow = new google.maps.InfoWindow;
-
-    // var content = template.replace(/{{index}}/g, index).replace(/{{lat}}/g, lat).replace(/{{lng}}/g, lng);
     newLng = lng;
     newLat = lat;
     address = geocodeLatLng(geocoder, map, infowindow, lat, lng);
-    // $('#new-property-btn').on('click', function() {
-    //   newProperty(sdfs);
-    // });
   });
 });
 //========================================================================================================================
@@ -127,6 +123,7 @@ var newProperty = function(label, address, lat, lng, proptype, size, note){
     type: 'post'
   }).done(function(){
     alert('success saving');
+
   });
 }
 
@@ -147,33 +144,34 @@ var options = {
   url: 'http://localhost:3000/properties'
 }
 var displayProperties = function(properties){
-  console.log('It did this on start');
   properties.forEach(function(property){
+    var label = property.label;
+    var address = property.address;
     var lat = property.latitude;
     var lng = property.longitude;
-    var label = property.label;
     var size = property.size;
+    var proptype = property.proptype;
+    var note = property.note;
     // var icon = "http://www.clker.com/cliparts/0/V/t/A/W/N/google-maps-gris.svg";
-    var icon = "http://www.clker.com/cliparts/U/Q/d/9/V/E/orange-pin.svg";
-    map.addMarker({
-    lat:   lat,
-    lng:   lng,
-    title: label,
-    icon : {
-                scaledSize : new google.maps.Size(60, 60),
-                url : icon
-              },
-    // click: function(e) {},
-    infoWindow: {
-        content: '<p>Name: '     + label + '</p>' + 
-                 '<p>Size: '     + size  + '</p>' +
-                 '<p>Latitude: ' + lat   + '</p>' +
-                 '<p>Longitude: '+ lng   + '</p>'
-        // content : content
-      }
-    });
-      console.log("Its doing something here");
-      console.log(lat);
+    // var icon = "http://www.clker.com/cliparts/U/Q/d/9/V/E/orange-pin.svg";
+    // map.addMarker({
+    // lat:   lat,
+    // lng:   lng,
+    // title: label,
+    // icon : {
+    //           scaledSize : new google.maps.Size(60, 60),
+    //           url : icon
+    //         },
+    // // click: function(e) {},
+    // infoWindow: {
+    //     content: '<p>Name: '     + label + '</p>' + 
+    //              '<p>Size: '     + size  + '</p>' +
+    //              '<p>Latitude: ' + lat   + '</p>' +
+    //              '<p>Longitude: '+ lng   + '</p>'
+    //     // content : content
+    //   }
+    // });
+    // newProperty(label, address, lat, lng, proptype, size, note);
   });
 }
 
