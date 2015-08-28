@@ -1,20 +1,5 @@
 var map;
-// Update position
-// $(document).on('submit', '.edit_marker', function(e) {
-//   e.preventDefault();
-//   console.log('doing this')
-//   var $index = $(this).data('marker-index');
-//   $lat = $('#marker_' + $index + '_lat').val();
-//   $lng = $('#marker_' + $index + '_lng').val();
-//   var template = $('#edit_marker_template').text();
-//   // Update form values
-//   var content = template.replace(/{{index}}/g, $index).replace(/{{lat}}/g, $lat).replace(/{{lng}}/g, $lng);
-//   map.markers[$index].setPosition(new google.maps.LatLng($lat, $lng));
-//   map.markers[$index].infoWindow.setContent(content);
-//   $marker = $('#markers-with-coordinates').find('li').eq(0).find('a');
-//   $marker.data('marker-lat', $lat);
-//   $marker.data('marker-lng', $lng);
-// });
+
 //========================================================================================================================
 var geocoder = new google.maps.Geocoder;
 var newLat; 
@@ -29,17 +14,16 @@ var geocodeLatLng = function(geocoder, map, infowindow, lat, lng, index) {
             var index = map.markers.length;
             var content = "<div class='pins'>";
             content += "<input type='text' class='pin-label' placeholder='Label'>";
-            content += "<p class='pin-address'>Address: <span>"+address+"</span></p>";
+            content += "<p>Address: <span class='pin-address'>"+address+"</span></p>";
             content += "<input type='text' class='pin-note' placeholder='Notes / Listing Hyperlink'>";
             content += "<p>Type: "
             content += "<select class='pin-type'><option>Apartment</option>";
             content += "<option>Townhouse</option>";
             content += "<option>House</option>";
             content += "<option>Land</option></select></p>";
-            content += "<p class='pin-size'>Size: <input placeholder='Meters'></p>";
+            content += "<p class='pin-size'>Size: <input class='pin-size-input' placeholder='Meters'></p>";
             content += "<button class='new-property-btn'>Save</button>";
             content += "</div>";
- console.log('f')
             map.addMarker({
               lat: lat,
               lng: lng,
@@ -133,7 +117,7 @@ $('#map').on('click', '.new-property-btn', function() {
   var lat = newLat;
   var lng = newLng;
   var proptype = $(this).parent().find('.pin-type').val();
-  var size = $(this).parent().find('.pin-size').val();
+  var size = $(this).parent().find('.pin-size-input').val();
   var note = $(this).parent().find('.pin-note').val();
   newProperty(label, address, lat, lng, proptype, size, note);
 });
@@ -147,31 +131,36 @@ var displayProperties = function(properties){
   properties.forEach(function(property){
     var label = property.label;
     var address = property.address;
+    var note = property.note;
     var lat = property.latitude;
     var lng = property.longitude;
     var size = property.size;
     var proptype = property.proptype;
-    var note = property.note;
     // var icon = "http://www.clker.com/cliparts/0/V/t/A/W/N/google-maps-gris.svg";
-    // var icon = "http://www.clker.com/cliparts/U/Q/d/9/V/E/orange-pin.svg";
-    // map.addMarker({
-    // lat:   lat,
-    // lng:   lng,
-    // title: label,
-    // icon : {
-    //           scaledSize : new google.maps.Size(60, 60),
-    //           url : icon
-    //         },
-    // // click: function(e) {},
-    // infoWindow: {
-    //     content: '<p>Name: '     + label + '</p>' + 
-    //              '<p>Size: '     + size  + '</p>' +
-    //              '<p>Latitude: ' + lat   + '</p>' +
-    //              '<p>Longitude: '+ lng   + '</p>'
-    //     // content : content
-    //   }
-    // });
-    // newProperty(label, address, lat, lng, proptype, size, note);
+    var icon = "http://www.clker.com/cliparts/U/Q/d/9/V/E/orange-pin.svg";
+    var content = "<div class='existing-pins'>";
+    content += "<p class='existing-pins-label'>"+label+"</p>";
+    content += "<p>Address: <span class='existing-pins-address'>"+address+"</span></p>";
+    content += "<p>Notes: <span class='existing-pins-note'>"+note+"</span></p>";
+    content += "<p>Type: <span class='existing-pins-type'>"+proptype+"</span></p>";
+    content += "<p>Size: <span class='existing-pins-size'>"+size+"</span> m2</p>";
+    content += "</div>";
+
+    map.addMarker({
+    lat:   lat,
+    lng:   lng,
+    title: label,
+    icon : {
+              scaledSize : new google.maps.Size(60, 60),
+              url : icon
+            },
+    infoWindow: {
+        content : content
+      }
+    });
+    // $('#saved-property-list').append('<li><a href="#" class="pan-to-marker" data-marker-lat="' + marker.getPosition().lat() + '" data-marker-lng="' + marker.getPosition().lng() + '">' + marker.title + '</a></li>');
+    $('#saved-property-list').append('<div class="save-sidebar">'+content+'</div>');
+ 
   });
 }
 
