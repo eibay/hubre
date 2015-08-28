@@ -1,9 +1,26 @@
 //Session Login
 var loginUser = function(email, password){
+  var data = {
+    email: email,
+    password: password
+  }
 
+  $.ajax({
+    url: 'http://localhost:3000/session',
+    data: data,
+    type: 'post'
+  }).done(function(){
+    hideUserForm();
+  });
 
 }
 
+$('.login-btn').on('click', function(){
+  var email = $('.email-login').val();
+  var password = $('.password-login').val();
+  loginUser(email, password);
+
+});
 
 //Session Logout
 
