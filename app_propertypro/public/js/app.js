@@ -159,8 +159,9 @@ var displayProperties = function(properties){
       }
     });
     // $('#saved-property-list').append('<li><a href="#" class="pan-to-marker" data-marker-lat="' + marker.getPosition().lat() + '" data-marker-lng="' + marker.getPosition().lng() + '">' + marker.title + '</a></li>');
-    $('#saved-property-list').append('<div class="save-sidebar">'+content+'</div>');
- 
+    // $('#saved-property-list').append('<div class="save-sidebar">'+content+'</div>');
+    $('#saved-property-list').append('<div><a href="#" class="pan-to-marker" data-marker-lat="' + marker.getPosition().lat() + '" data-marker-lng="' + marker.getPosition().lng() + '">' + content + '</a></div>');
+     
   });
 }
 
