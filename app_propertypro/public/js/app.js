@@ -1,5 +1,21 @@
 var map;
 
+// Update position
+$(document).on('submit', '.edit_marker', function(e) {
+   e.preventDefault();
+   console.log('doing this')
+   var $index = $(this).data('marker-index');
+   $lat = $('#marker_' + $index + '_lat').val();
+   $lng = $('#marker_' + $index + '_lng').val();
+   var template = $('#edit_marker_template').text();
+   // Update form values
+   var content = template.replace(/{{index}}/g, $index).replace(/{{lat}}/g, $lat).replace(/{{lng}}/g, $lng);
+   map.markers[$index].setPosition(new google.maps.LatLng($lat, $lng));
+   map.markers[$index].infoWindow.setContent(content);
+   $marker = $('#markers-with-coordinates').find('li').eq(0).find('a');
+   $marker.data('marker-lat', $lat);
+   $marker.data('marker-lng', $lng);
+ });
 //========================================================================================================================
 var geocoder = new google.maps.Geocoder;
 var newLat; 
@@ -78,7 +94,6 @@ $(document).ready(function(){
     var lat = event.latLng.lat();
     var lng = event.latLng.lng();
     var template = $('#edit_marker_template').text();
-
     var infowindow = new google.maps.InfoWindow;
     newLng = lng;
     newLat = lat;
@@ -107,7 +122,6 @@ var newProperty = function(label, address, lat, lng, proptype, size, note){
     type: 'post'
   }).done(function(){
     alert('success saving');
-
   });
 }
 
@@ -137,7 +151,7 @@ var displayProperties = function(properties){
     var size = property.size;
     var proptype = property.proptype;
     // var icon = "http://www.clker.com/cliparts/0/V/t/A/W/N/google-maps-gris.svg";
-    var icon = "http://www.clker.com/cliparts/U/Q/d/9/V/E/orange-pin.svg";
+    var icon = "https://cdn2.iconfinder.com/data/icons/flat-style-svg-icons-part-1/512/location_marker_pin-512.png";
     var content = "<div class='existing-pins'>";
     content += "<p class='existing-pins-label'>"+label+"</p>";
     content += "<p>Address: <span class='existing-pins-address'>"+address+"</span></p>";
@@ -158,13 +172,10 @@ var displayProperties = function(properties){
         content : content
       }
     });
-    // $('#saved-property-list').append('<li><a href="#" class="pan-to-marker" data-marker-lat="' + marker.getPosition().lat() + '" data-marker-lng="' + marker.getPosition().lng() + '">' + marker.title + '</a></li>');
-    // $('#saved-property-list').append('<div class="save-sidebar">'+content+'</div>');
-    $('#saved-property-list').append('<div><a href="#" class="pan-to-marker" data-marker-lat="' + marker.getPosition().lat() + '" data-marker-lng="' + marker.getPosition().lng() + '">' + content + '</a></div>');
-     
+    // Pan screen to marker
+    $('#saved-property-list').append('<ahref="#" class="pan-to-marker" data-marker-lat="'+lat+'" data-marker-lng="'+lng+'"><div class="save-sidebar">'+content+'</div></a>');
   });
 }
-
 $.ajax(options).done(displayProperties);
 //===========================================================================================
 // Not currently in use
