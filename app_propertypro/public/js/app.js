@@ -100,7 +100,6 @@ $(document).ready(function(){
     newLng = lng;
     newLat = lat;
     address = geocodeLatLng(geocoder, map, infowindow, lat, lng);
-    console.log(address);
     // $('#new-property-btn').on('click', function() {
     //   newProperty(sdfs);
     // });
@@ -148,6 +147,7 @@ var options = {
   url: 'http://localhost:3000/properties'
 }
 var displayProperties = function(properties){
+  console.log('It did this on start');
   properties.forEach(function(property){
     var lat = property.latitude;
     var lng = property.longitude;
@@ -172,6 +172,8 @@ var displayProperties = function(properties){
         // content : content
       }
     });
+      console.log("Its doing something here");
+      console.log(lat);
   });
 }
 
