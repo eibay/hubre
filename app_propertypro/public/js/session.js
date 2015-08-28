@@ -1,5 +1,8 @@
 //Session Login
+var loginUser = function(email, password){
 
+
+}
 
 
 //Session Logout
@@ -8,7 +11,6 @@
 
 //Adding New User
 var newUser = function(email, password, password_confirm){
-  // type: type, 
   var data = {
     user: {
       email: email,

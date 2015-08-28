@@ -6,21 +6,16 @@ class SessionController < ApplicationController
   end
 
   def create
-    # @user = User.where(email: params[:email]).first
     user = User.find_by(email: params[:email])
 
     if user && user.authenticate(params[:password])
-      #win - login user
-      #render 'win' #temporary text to display
-      # binding.pry
 
       #session[:user_id] is a global variable
       session[:user_id] = user.id
-
-      redirect_to 'index.html' #decide where to go 
+      
+      render json: { message: 'success'}.to_json, status: 201
     else
-     
-      render :new
+      render json: { message: 'failure'}.to_json, status: 422
     end
 
     def destroy
