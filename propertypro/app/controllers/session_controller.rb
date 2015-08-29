@@ -18,12 +18,11 @@ class SessionController < ApplicationController
       render json: { message: 'failure'}.to_json, status: 422
     end
 
-    def destroy
-      session[:user_id] = nil
-      redirect_to '/login'
-    end
-
   end
 
-
+  def destroy
+    session[:user_id] = nil
+    render json: { message: 'success'}.to_json, status: 201
+  end
+  
 end

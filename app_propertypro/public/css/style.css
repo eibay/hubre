@@ -1,4 +1,3 @@
-
 #top-bar {
   display: block;
   background: url("http://www.hebburntownfc.co.uk/wp-content/uploads/2012/07/footballpitch.jpg");
@@ -51,6 +50,7 @@
   }
 
 /*================================================================================*/
+<<<<<<< Updated upstream
 #box-login {
   height: 25vh;
 }
@@ -69,6 +69,8 @@
 
     #new-user input {height: 3.4vh;}
 /*================================================================================*/
+=======
+>>>>>>> Stashed changes
 /*Existing*/
     .existing-pins {font-weight: 700;}
         .existing-pins span {font-weight: 400;}
@@ -79,6 +81,7 @@
         .existing-pins-size {font-weight: 400;}*/
 
         .save-sidebar {
+<<<<<<< Updated upstream
           background-color: ##0080FF;
           border: solid grey;
           border-radius: 2px;
@@ -89,15 +92,30 @@
           background-color: #0080FF;
           overflow: scroll;
           height: 65vh;
+=======
+          background-color: #2DFFDC;
+          border: solid grey;
+          border-radius: 2px;
+          color: grey;
+        }
+    
+        #property-list {
+          background-color: #2DFFDC;
+>>>>>>> Stashed changes
         }
         #property-list-title {
           text-align: center;
           margin-bottom: 3px; 
           margin-top: 3px;
+<<<<<<< Updated upstream
           /*text-decoration: underline;*/
           font-weight: 700;
           color: white;
           font-family: 'Bree Serif', serif;
+=======
+          text-decoration: underline;
+          font-weight: 700;
+>>>>>>> Stashed changes
         }
 
 /*================================================================================*/
@@ -221,4 +239,7 @@
     margin-bottom: 5px;
     float: right;
   }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes

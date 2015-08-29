@@ -23,7 +23,19 @@ $('.login-btn').on('click', function(){
 });
 
 //Session Logout
+var logout = function(){
 
+  $.ajax({
+      url: 'http://localhost:3000/session',
+      data: data,
+      type: 'destroy'
+    }).done(function(){
+      showUserForm();
+    });
+
+}
+
+$('.logout-btn').on('click', logout);
 
 
 //Adding New User
@@ -70,4 +82,11 @@ function hideUserForm(){
   $('.login').hide();
   $('.signup').hide();
 }
+
+function showUserForm(){
+  $('.login').show();
+  $('.signup').show();
+}
+
+//Initial Status of Session Form
 

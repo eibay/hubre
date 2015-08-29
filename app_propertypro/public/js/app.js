@@ -1,5 +1,4 @@
 var map;
-
 // Update position
 $(document).on('submit', '.edit_marker', function(e) {
    e.preventDefault();
@@ -16,6 +15,7 @@ $(document).on('submit', '.edit_marker', function(e) {
    $marker.data('marker-lat', $lat);
    $marker.data('marker-lng', $lng);
  });
+
 //========================================================================================================================
 var geocoder = new google.maps.Geocoder;
 var newLat; 
@@ -151,7 +151,9 @@ var displayProperties = function(properties){
     var size = property.size;
     var proptype = property.proptype;
     // var icon = "http://www.clker.com/cliparts/0/V/t/A/W/N/google-maps-gris.svg";
-    var icon = "https://cdn2.iconfinder.com/data/icons/flat-style-svg-icons-part-1/512/location_marker_pin-512.png";
+    // var icon = "https://cdn2.iconfinder.com/data/icons/flat-style-svg-icons-part-1/512/location_marker_pin-512.png";
+
+    var icon = "http://www.clker.com/cliparts/U/Q/d/9/V/E/orange-pin.svg";
     var content = "<div class='existing-pins'>";
     content += "<p class='existing-pins-label'>"+label+"</p>";
     content += "<p>Address: <span class='existing-pins-address'>"+address+"</span></p>";
@@ -172,8 +174,14 @@ var displayProperties = function(properties){
         content : content
       }
     });
+
     // Pan screen to marker
     $('#saved-property-list').append('<ahref="#" class="pan-to-marker" data-marker-lat="'+lat+'" data-marker-lng="'+lng+'"><div class="save-sidebar">'+content+'</div></a>');
+
+    // $('#saved-property-list').append('<li><a href="#" class="pan-to-marker" data-marker-lat="' + marker.getPosition().lat() + '" data-marker-lng="' + marker.getPosition().lng() + '">' + marker.title + '</a></li>');
+    $('#saved-property-list').append('<div class="save-sidebar">'+content+'</div>');
+ 
+
   });
 }
 $.ajax(options).done(displayProperties);
@@ -185,4 +193,3 @@ function initAutocomplete() {
   var searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 }
-
